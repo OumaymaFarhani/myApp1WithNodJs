@@ -1,0 +1,43 @@
+<html>
+<head>
+
+
+</head>
+<body>
+<h1>Contacts</h1>
+
+<form method="GET" action="/contact/search">
+
+<label for="search">Search By FullName :</label>
+<input type="search" id="search" name="search"
+       aria-label="Search by FullName" />
+
+<button type="submit" >Search</button>
+
+ </form>
+
+<table border="1">
+<tr>
+<td> Name </td>
+<td> Phone number</td>
+<td>Action</td>
+<td>Action2</td>
+</tr>
+{% for item in data %}
+
+<tr>
+<td>{{item.FullName}}</td>
+<td>{{item.Phone}}</td>
+
+<td><a href="/contact/delete/{{item._id}}">Delete</td>
+<td><a href="/contact/update/{{item._id}}">Update</td>
+
+</tr>
+
+{% endfor %}
+
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+}
+table#alter tr:nth-child(even) {
+  background-color: #eee;
+}
+table#alter tr:nth-child(odd) {
+  background-color: #fff;
+}
+table#alter th {
+  color: white;
+  background-color: gray;
+}
+</style>
+
+</head>
+<body>
+<h1>List Users </h1>
+
+<form method="GET" action="/login/search">
+
+<label for="search">Search By FullName :</label>
+<input type="search" id="search" name="search"
+       aria-label="Search by FullName" />
+
+<button type="submit" >Search</button>
+
+ </form>
+
+<table border="1">
+<tr>
+<td> Name </td>
+
+<td>Action</td>
+<td>Action2</td>
+</tr>
+{% for item in data %}
+
+<tr>
+<td>{{item.LoginUser}}</td>
+
+
+<td><a href="/delete/{{item._id}}">Delete</td>
+<td><a href="/update/{{item._id}}">Update</td>
+
+</tr>
+
+{% endfor %}
+
+
+</table>
+
+</body>
+</html>

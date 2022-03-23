@@ -1,0 +1,24 @@
+<form method="get" action="/contacts">
+<table border="1">
+<tr>
+<td> Name </td>
+<td> Phone number</td>
+<td>Action</td>
+<td>Action2</td>
+</tr>
+{% for item in data %}
+
+<tr>
+<td>{{item.FullName}}</td>
+<td>{{item.Phone}}</td>
+
+<td><a href="/contact/delete/{{item._id}}">Delete</td>
+<td><a href="/contact/update/{{item._id}}">Update</td>
+
+</tr>
+
+{% endfor %}
+
+
+</table>
+</form>
